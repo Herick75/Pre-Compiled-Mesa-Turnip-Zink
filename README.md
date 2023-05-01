@@ -18,11 +18,11 @@ The drivers were thought to be used in the [Box4Droid](https://github.com/Herick
 
 • The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
 
-You will need to use some Mesa environment variables to use the drivers, it is recommended to add them in the `.bashrc` file so you don't have to export them every time you start a new session in your RootFS. The variables I recommend adding are `export MESA_VK_WSI_DEBUG=sw`, `export MESA_LOADER_DRIVER_OVERRIDE=zink`, `export MESA_GL_VERSION_OVERRIDE=4.6COMPAT`
+You will need to use some Mesa environment variables to use the drivers, it is recommended to add them in the `.bashrc` file so you don't have to export them every time you start a new session in your RootFS. The variables I recommend adding are `export MESA_VK_WSI_DEBUG=sw`, `export MESA_LOADER_DRIVER_OVERRIDE=zink` and `export MESA_GL_VERSION_OVERRIDE=4.6COMPAT`
 
 • The second option is for you who want to debug an application and don't want to override the drivers already installed on your system, you can use [Mesa environment variables](https://docs.mesa3d.org/envvars.html) for that, here's an example:
 
-`DISPLAY=:1 LIBGL_DRIVERS_PATH="/opt/arm64/turnip-zink-775e42e6/lib/aarch64-linux-gnu/dri/" VK_ICD_FILENAMES=/opt/arm64/turnip-zink-775e42e6/share/vulkan/icd.d/freedreno_icd.aarch64.json MESA_VK_WSI_DEBUG=sw MESA_LOADER_DRIVER_OVERRIDE=zink glxheads`
+`LIBGL_DRIVERS_PATH="/opt/arm64/turnip-zink-775e42e6/lib/aarch64-linux-gnu/dri/" VK_ICD_FILENAMES=/opt/arm64/turnip-zink-775e42e6/share/vulkan/icd.d/freedreno_icd.aarch64.json MESA_VK_WSI_DEBUG=sw MESA_LOADER_DRIVER_OVERRIDE=zink glxheads`
 
 # Credits
 
