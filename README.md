@@ -6,6 +6,8 @@ Packages with Turnip Zink compiled and ready to be used on the system.
 
 Install the package using `dpkg -i mesa-turnip-zink-<version>-<arch>.deb` You will come across some necessary dependencies, just type `apt --fix-broken install -y` and wait for the package to be installed.Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
 
+**Only tested on Ubuntu 22.04 (Jammy)**
+
 ## Notes about armhf packages on arm64 RootFS 
 
 If you want to install armhf drivers on arm64, you will need to add multiarch support in your RootFS, for that type `dpkg --add-architecture armhf` and then type `apt update`, after that you will be able to install the drivers .
