@@ -1,6 +1,6 @@
 # Pre-compiled Mesa-Turnip-Zink
 
-Packages with Turnip Zink compiled and ready to be used on the system.
+Packages with Turnip + Zink compiled and ready to be used on the system.
 
 # How to install?
 
