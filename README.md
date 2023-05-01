@@ -4,7 +4,7 @@ Packages with Turnip Zink compiled and ready to be used on the system.
 
 # How to install?
 
-Install the package using `dpkg -i mesa-turnip-zink-<version>-<arch>.deb` You will come across some necessary dependencies, just type apt --fix-broken install -y and wait for the package to be installed.Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
+Install the package using `dpkg -i mesa-turnip-zink-<version>-<arch>.deb` You will come across some necessary dependencies, just type `apt --fix-broken install -y` and wait for the package to be installed.Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
 
 # How to use?
 
