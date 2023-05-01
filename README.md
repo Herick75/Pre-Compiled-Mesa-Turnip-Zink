@@ -8,7 +8,7 @@ Install the package using `dpkg -i mesa-turnip-zink-<version>-<arch>.deb` You wi
 
 # How to use?
 
-The drivers were thought to be used in the Box4Droid project, but you can perfectly use it in your RootFS, there are two options.
+The drivers were thought to be used in the [Box4Droid](https://github.com/Herick75/Box4Droid) project, but you can perfectly use it in your RootFS, there are two options.
 
 • The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
 
