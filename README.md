@@ -12,7 +12,7 @@ The drivers were thought to be used in the Box4Droid project, but you can perfec
 
 • The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
 
-• The second option is for you who want to debug an application and don't want to override the drivers already installed on your system, you can use (Mesa's environment variables)[https://docs.mesa3d.org/envvars.html] for that, here's an example:
+• The second option is for you who want to debug an application and don't want to override the drivers already installed on your system, you can use [Mesa's environment variables](https://docs.mesa3d.org/envvars.html) for that, here's an example:
 
 `DISPLAY=:1 LIBGL_DRIVERS_PATH="/opt/arm64/turnip-zink-775e42e6/lib/aarch64-linux-gnu/dri/" VK_ICD_FILENAMES=/opt/arm64/turnip-zink-775e42e6/share/vulkan/icd.d/freedreno_icd.aarch64.json MESA_VK_WSI_DEBUG=sw MESA_LOADER_DRIVER_OVERRIDE=zink glxheads`
 
