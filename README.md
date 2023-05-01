@@ -31,3 +31,5 @@ I want to thank [Heasterian](https://github.com/Heasterian), this generous man w
 I also used the Cross Compile method that Heasterian provided in their Box86-64-on-SD845-mobian repository [here](https://github.com/Heasterian/Box86-64-on-SD845-mobian/blob/main/docs/PREREQUISITES.md#prerequisites).
 
 I would also like to mention and thank JeezDisReez, he made and shared a patch on Termux Discord where it is possible to compile Turnip with only the "kgsl" flag.
+
+And thanks to the Mesa devs for developing the drivers.
