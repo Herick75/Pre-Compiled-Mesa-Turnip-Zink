@@ -32,4 +32,4 @@ I also used the Cross Compile method that Heasterian provided in their Box86-64-
 
 I would also like to mention and thank JeezDisReez, he made and shared a patch on Termux Discord where it is possible to compile Turnip with only the "kgsl" flag.
 
-And thanks to the Mesa devs for developing the drivers.
+And thanks to the [Mesa](https://gitlab.freedesktop.org/mesa/mesa) devs for developing the drivers.
