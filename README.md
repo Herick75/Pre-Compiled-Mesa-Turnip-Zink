@@ -18,7 +18,7 @@ The drivers were thought to be used in the [Box4Droid](https://github.com/Herick
 
 • The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
 
-After copying the folders to the ```/usr``` directory, edit the file at ```/usr/share/vulkan/icd.d/freedreno_icd.arch.json` `` (You can use the editor of your choice, in my case I used ```nano```).  Go down to line 4, and update the directory of the libvulkan_freedreno.so file, which is now in /usr/lib/arch/libvulkan_freedreno.so (Replace ```arch``` with ```arm-linux-gnueabihf` `` or ```aarch64-linux-gnu```.
+After copying the folders to the ```/usr``` directory, edit the file at ```/usr/share/vulkan/icd.d/freedreno_icd.arch.json``` (You can use the editor of your choice, in my case I used ```nano```).  Go down to line 4, and update the directory of the libvulkan_freedreno.so file, which is now in /usr/lib/arch/libvulkan_freedreno.so (Replace ```arch``` with ```arm-linux-gnueabihf``` or ```aarch64-linux-gnu```.
 
 You will need to use some Mesa environment variables to use the drivers, it is recommended to add them in the `.bashrc` file so you don't have to export them every time you start a new session in your RootFS. The variables I recommend adding are `export MESA_VK_WSI_DEBUG=sw`, `export MESA_LOADER_DRIVER_OVERRIDE=zink` and `export MESA_GL_VERSION_OVERRIDE=4.6COMPAT`
 
