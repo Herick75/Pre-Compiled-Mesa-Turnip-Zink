@@ -32,7 +32,7 @@ You will need to use some Mesa environment variables to use the drivers, it is r
 ```
 export \
   LIBGL_DRIVERS_PATH="/opt/turnip-zink/arm64/lib/aarch64-linux-gnu/dri/:/opt/turnip-zink/armhf/lib/arm-linux-gnueabihf/dri/" \
-  VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.d/freedreno_icd.armv8.2l.json" \
+  VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.armv8.2l.json" \
   MESA_VK_WSI_DEBUG=sw \
   MESA_LOADER_DRIVER_OVERRIDE=zink
   ```
