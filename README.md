@@ -4,27 +4,37 @@ Packages with Turnip + Zink compiled and ready to be used on the system.
 
 # How to install?
 
-Install the package using `dpkg -i mesa-turnip-zink-<version>-<arch>.deb` You will come across some necessary dependencies, just type `apt --fix-broken install -y` and wait for the package to be installed.Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
+If you want to install armhf drivers on arm64, you will need to add multiarch support in your RootFS, type
+
+`dpkg --add-architecture armhf ; apt update`, after that you will be able to install the drivers .
+
+Install the package using `apt install ./mesa-turnip-zink-<version>-<arch>.deb`.
+
+Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
 
 **Only tested on Ubuntu 22.04 (Jammy)**
-
-## Notes about armhf packages on arm64 RootFS 
-
-If you want to install armhf drivers on arm64, you will need to add multiarch support in your RootFS, for that type `dpkg --add-architecture armhf` and then type `apt update`, after that you will be able to install the drivers .
 
 # How to use?
 
 The drivers were thought to be used in the [Box4Droid](https://github.com/Herick75/Box4Droid) project, but you can perfectly use it in your RootFS, there are two options.
 
-• The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
+- The first option is to simply copy the `include`, `lib` and `share` folders to the `/usr` folder of your RootFS, with that you will already be using the drivers by default on your system.
 
 After copying the folders to the ```/usr``` directory, edit the file at ```/usr/share/vulkan/icd.d/freedreno_icd.arch.json``` (You can use the editor of your choice, in my case I used ```nano```).  Go down to line 4, and update the directory of the libvulkan_freedreno.so file, which is now in /usr/lib/arch/libvulkan_freedreno.so (Replace ```arch``` with ```arm-linux-gnueabihf``` or ```aarch64-linux-gnu```.
 
-You will need to use some Mesa environment variables to use the drivers, it is recommended to add them in the `.bashrc` file so you don't have to export them every time you start a new session in your RootFS. The variables I recommend adding are `export MESA_VK_WSI_DEBUG=sw`, `export MESA_LOADER_DRIVER_OVERRIDE=zink` and `export MESA_GL_VERSION_OVERRIDE=4.6COMPAT`
+You will need to use some Mesa environment variables to use the drivers, it is recommended using [alias](https://www.geeksforgeeks.org/alias-command-in-linux-with-examples/) or export so you don't have to export them every time you start a new session in your RootFS. The variables I recommend adding are `MESA_VK_WSI_DEBUG=sw`, `MESA_LOADER_DRIVER_OVERRIDE=zink` and `MESA_GL_VERSION_OVERRIDE=4.6COMPAT`
+- The second option is for you who want to debug an application and don't want to override the drivers already installed on your system, you can use [Mesa environment variables](https://docs.mesa3d.org/envvars.html) for that, here's an example:
 
-• The second option is for you who want to debug an application and don't want to override the drivers already installed on your system, you can use [Mesa environment variables](https://docs.mesa3d.org/envvars.html) for that, here's an example:
-
-`LIBGL_DRIVERS_PATH="/opt/arm64/turnip-zink-775e42e6/lib/aarch64-linux-gnu/dri/" VK_ICD_FILENAMES=/opt/arm64/turnip-zink-775e42e6/share/vulkan/icd.d/freedreno_icd.aarch64.json MESA_VK_WSI_DEBUG=sw MESA_LOADER_DRIVER_OVERRIDE=zink glxheads`
+```
+export \
+  LIBGL_DRIVERS_PATH="/opt/turnip-zink/arm64/lib/aarch64-linux-gnu/dri/:/opt/turnip-zink/armhf/lib/arm-linux-gnueabihf/dri/" \
+  VK_ICD_FILENAMES="/opt/turnip-zink/arm64/share/vulkan/icd.d/freedreno_icd.aarch64.json:/opt/turnip-zink/armhf/share/vulkan/icd.d/freedreno_icd.d/freedreno_icd.armv8.2l.json" \
+  MESA_VK_WSI_DEBUG=sw \
+  MESA_LOADER_DRIVER_OVERRIDE=zink
+  ```
+  
+- For Areno 610 :
+  `TU_DEBUG=noconform`
 
 # Credits
 
