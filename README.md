@@ -6,7 +6,9 @@ Packages with Turnip + Zink compiled and ready to be used on the system.
 
 If you want to install armhf drivers on arm64, you will need to add multiarch support in your RootFS, type
 
-`dpkg --add-architecture armhf ; apt update`, after that you will be able to install the drivers .
+`dpkg --add-architecture armhf ; apt update`
+
+after that you will be able to install the drivers .
 
 Install the package using `apt install ./mesa-turnip-zink-<version>-<arch>.deb`.
 
