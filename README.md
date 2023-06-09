@@ -10,7 +10,9 @@ If you want to install armhf drivers on arm64, you will need to add multiarch su
 
 after that you will be able to install the drivers .
 
-Install the package using `apt install ./mesa-turnip-zink-<version>-<arch>.deb`.
+Install the package using 
+
+`apt install ./mesa-turnip-zink-<version>-<arch>.deb`
 
 Drivers are installed in `/opt/<arch>/turnip-zink-<version>`.
 
